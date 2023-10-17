@@ -1,0 +1,25 @@
+import numpy
+
+# x = no. of marks
+# y = no. of hours study
+
+y = numpy.array([50,30,80,10])
+x = numpy.array([5,3,8,1])
+
+x = x.reshape(-1,1)   # convert into 2d array
+
+import matplotlib.pyplot as plt
+
+plt.scatter(x,y)
+plt.plot(x,y)
+
+plt.plot(x,y, marker="o")  # plot and scatter together
+
+from sklearn.linear_model import LinearRegression
+
+model = LinearRegression()
+model.fit(x,y)
+model.coef_
+
+model.predict([[3.]])  # 3 = 3 hour study
+# result give no. of marks  is 30 i got
